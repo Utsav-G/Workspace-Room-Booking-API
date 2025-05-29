@@ -11,7 +11,7 @@ router.delete('/cancel/:bookingId', bookingController.cancelBooking);
 // View current bookings
 router.get('/bookings', bookingController.getAllBookings);
 
-// Check available rooms for a slot
+// Check available rooms 
 router.get('/rooms/available', bookingController.getAvailableRooms);
 
 module.exports = router;

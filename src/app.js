@@ -9,22 +9,22 @@ const app = express();
 app.use(express.json())
 app.use('/api/v1', bookingRoutes)
 
-// Test database connection
+// testing database connection
 sequelize.authenticate()
   .then(() => console.log('✅Connected to PostgreSQL'))
   .catch(err => console.error('Connection failed:', err));
 
-// Sync models (create tables)
+// syncing models (or create tables in the start)
 sequelize.sync({ alter:true })
   .then(() => console.log('✅Database synced'))
   .catch(err => console.error('Sync error:', err));
 
-// Basic route
+// basic route for testing
 app.get('/', (req, res) => {
   res.send('✅Workspace Booking API');
 });
 
-// Start server
+// start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅Server running on http://localhost:${PORT}`);

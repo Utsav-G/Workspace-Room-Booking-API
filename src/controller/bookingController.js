@@ -261,7 +261,7 @@ module.exports = {
         include: [
           {
             model: Room,
-            as: "room", // adjust alias if defined in association
+            as: "room",
           },
         ],
       });
@@ -272,7 +272,7 @@ module.exports = {
             booking.user = await User.findByPk(booking.bookerId);
           } else if (booking.bookerType === "team") {
             booking.team = await Team.findByPk(booking.bookerId);
-          }
+          }//manually updating user or team attribute depending upon bookerType
         })
       );
 
