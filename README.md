@@ -8,6 +8,10 @@ A simple room booking API built with Node.js, Express, Sequelize, and PostgreSQL
 
 #### Step 1: Build and start containers
 
+After cloning the repo, 
+```
+cd `<project-folder>`
+```
 In terminal run
 ```
 docker-compose up --build
@@ -22,6 +26,7 @@ Open a new terminal tab and run :
 ```
 docker exec -it room-booking-api node src/seed.js
 ```
+> `room-booking-api` is the container name
 
 This will populate the users, teams, rooms tables
 
