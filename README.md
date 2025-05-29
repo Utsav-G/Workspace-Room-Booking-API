@@ -8,6 +8,10 @@ A simple room booking API built with Node.js, Express, Sequelize, and PostgreSQL
 
 #### Step 1: Build and start containers
 
+After cloning the repo, 
+```
+cd `<project-folder>`
+```
 In terminal run
 ```
 docker-compose up --build
@@ -22,6 +26,7 @@ Open a new terminal tab and run :
 ```
 docker exec -it room-booking-api node src/seed.js
 ```
+> `room-booking-api` is the container name
 
 This will populate the users, teams, rooms tables
 
@@ -49,6 +54,7 @@ visit http://localhost:3000
 ### POST `/api/v1/bookings`
 
 **Description** - Book a room for a specific time slot
+
 **Request Body** - 
 ```
 {
@@ -88,6 +94,7 @@ visit http://localhost:3000
 
 ### GET `/api/v1/bookings`
 **Description** -  Retrieve all bookings.
+
 **Responses** - 
 - `201 Created`: Bookings object response
 - `404 Not Found`: No booking found
@@ -113,6 +120,7 @@ visit http://localhost:3000
 ### GET `/api/v1/rooms/available`
 
 **Description** - List all available rooms in each category of room segregated on the basis of time slots.
+
 **Responses** - 
 - `201 Created`: Available Rooms Object response
 - `500 Internal Server Error`: Unexpected server issue
@@ -146,8 +154,10 @@ visit http://localhost:3000
 ### DELETE `/api/v1/cancel/:bookingId`
 
 **Description** - Deletes the booking with booking id passed as parameter in URL
+
 **Sample URL** - 
 `http://localhost:3000/api/v1/cancel/c6fe9adf-52d1-4150-8be6-a86fda8bbd97`
+
 **Responses** - 
 - `201 Created`: Booking cancelled
 - `404 Not Found`: Booking not found
